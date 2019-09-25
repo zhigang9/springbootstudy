@@ -1,0 +1,14 @@
+wangzhigang:
+  name: "wangzhigang"
+  age: 30
+  sex: "\u7537"
+
+wanghuihan:
+  girl:
+    name: "wanghuihan"
+    age: 7
+    sex: "\u5973"
+
+spring:
+  profiles:
+    active: dev
