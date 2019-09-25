@@ -16,6 +16,8 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    /*nihaouser*/
+
     /*
     @RequestParam：一般我们使用该注解来获取多个参数，
     在（）内写入需要获取参数的参数名即可，一般在PUT，POST中比较常用。
