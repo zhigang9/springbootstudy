@@ -11,6 +11,8 @@ public class UserService {
     @Autowired
     UserInfoMapper userInfoMapper;
 
+    //8888888888888888
+
     public void createUser(String tel,String pwd){
         userInfoMapper.createUser(tel,pwd);
     }
