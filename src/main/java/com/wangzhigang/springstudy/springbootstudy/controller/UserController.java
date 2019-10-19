@@ -53,8 +53,16 @@ public class UserController {
         userService.createUser(tel,pwd);
     }
 
-    @PostMapping("/createuserbyentry")
+    @PostMapping("/createuserbymap")
+    public void createUserByMap(@RequestBody Map<String,Object> requestMap){
 
+        String tel = requestMap.get("tel").toString();
+        String pwd = requestMap.get("pwd").toString();
+
+        userService.createUser(tel,pwd);
+    }
+
+    @PostMapping("/createuserbyentry")
     public String createUserByEntry(@Valid UserInfo userInfo, BindingResult bindingResult){
 
         if(bindingResult.hasErrors()){
