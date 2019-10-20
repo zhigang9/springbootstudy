@@ -1,5 +1,7 @@
 package com.wangzhigang.springstudy.springbootstudy.model;
 
+import org.apache.ibatis.annotations.Result;
+
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import java.util.Date;

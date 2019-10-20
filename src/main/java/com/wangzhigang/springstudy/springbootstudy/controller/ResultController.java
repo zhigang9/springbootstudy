@@ -6,6 +6,7 @@ import com.wangzhigang.springstudy.springbootstudy.model.UserInfo;
 import com.wangzhigang.springstudy.springbootstudy.response.Result;
 import com.wangzhigang.springstudy.springbootstudy.utils.ResultUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,7 +18,6 @@ public class ResultController {
 
     @Autowired
     private ExceptionHandle exceptionHandle;
-
 
     @RequestMapping(value = "/getresult",method = RequestMethod.POST)
     public Result getResult(@RequestParam("name") String name,@RequestParam("pwd") String pwd){

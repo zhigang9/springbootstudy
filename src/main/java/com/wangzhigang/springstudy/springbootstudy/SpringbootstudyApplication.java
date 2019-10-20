@@ -1,5 +1,6 @@
 package com.wangzhigang.springstudy.springbootstudy;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.PropertySource;
@@ -16,6 +17,7 @@ import java.util.stream.Collectors;
 @SpringBootApplication
 @RequestMapping(value="/a")
 @RestController
+@MapperScan(basePackages = "com.wangzhigang.springstudy.springbootstudy.interfaces")
 public class SpringbootstudyApplication {
 
     @RequestMapping(value = "/b",method = RequestMethod.GET)

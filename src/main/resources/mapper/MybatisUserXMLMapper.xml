@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.wangzhigang.springstudy.springbootstudy.interfaces.MybatisUserXMLMapper">
+    <insert id="createUser" parameterType="java.util.Map">
+        insert into tp_user(tel,password,nickname,secret) values(#{tel},md5(#{pwd}),#{tel},'')
+    </insert>
+    
+    <update id="updateUser">
+        update tp_user set nickname=#{nickName} where user_id = #{user_id}
+    </update>
+    
+    <select id="getUser" resultType="com.wangzhigang.springstudy.springbootstudy.model.UserInfo">
+        select tel,nickname,password from tp_user where user_id = #{id}
+    </select>
+    
+    <delete id="deleteUserByUserId">
+        delete from tp_user where tel = #{tel}
+    </delete>
+</mapper>

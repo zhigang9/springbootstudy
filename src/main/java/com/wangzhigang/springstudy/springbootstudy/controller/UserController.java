@@ -2,6 +2,8 @@ package com.wangzhigang.springstudy.springbootstudy.controller;
 
 import com.wangzhigang.springstudy.springbootstudy.model.UserInfo;
 import com.wangzhigang.springstudy.springbootstudy.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +17,8 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 
     /*nihaouser*/
 
@@ -50,6 +54,8 @@ public class UserController {
         String tel = reqMap.get("tel").toString();
         String pwd = reqMap.get("pwd").toString();
 
+
+
         userService.createUser(tel,pwd);
     }
 
@@ -64,6 +70,9 @@ public class UserController {
 
     @PostMapping("/createuserbyentry")
     public String createUserByEntry(@Valid UserInfo userInfo, BindingResult bindingResult){
+
+        LOGGER.info("电话" + userInfo.getTel());
+        LOGGER.info("密码" + userInfo.getPassword());
 
         if(bindingResult.hasErrors()){
 
