@@ -28,7 +28,7 @@ public class SpringbootstudyApplication {
     public static void main(String[] args) throws Exception {
 
 
-        List<Person> personList = new ArrayList<>();
+       /* List<Person> personList = new ArrayList<>();
 
         Person a = new Person();
         a.setId(1);
@@ -56,7 +56,7 @@ public class SpringbootstudyApplication {
         {
             if(personList23.size() > 1)
                 System.out.println(personList23.get(1).getName());
-        }
+        }*/
 
         SpringApplication.run(SpringbootstudyApplication.class, args);
 
