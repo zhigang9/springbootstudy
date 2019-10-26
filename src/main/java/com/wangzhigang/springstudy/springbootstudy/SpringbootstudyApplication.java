@@ -3,10 +3,12 @@ package com.wangzhigang.springstudy.springbootstudy;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.security.Key;
 import java.util.ArrayList;
@@ -18,6 +20,8 @@ import java.util.stream.Collectors;
 @RequestMapping(value="/a")
 @RestController
 @MapperScan(basePackages = "com.wangzhigang.springstudy.springbootstudy.interfaces")
+@Configuration
+@EnableSwagger2
 public class SpringbootstudyApplication {
 
     @RequestMapping(value = "/b",method = RequestMethod.GET)

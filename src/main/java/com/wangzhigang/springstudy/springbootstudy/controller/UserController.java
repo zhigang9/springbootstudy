@@ -2,6 +2,9 @@ package com.wangzhigang.springstudy.springbootstudy.controller;
 
 import com.wangzhigang.springstudy.springbootstudy.model.UserInfo;
 import com.wangzhigang.springstudy.springbootstudy.service.UserService;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,6 +72,10 @@ public class UserController {
     }
 
     @PostMapping("/createuserbyentry")
+    @ApiOperation(value = "创建用户",notes = "使用手机和密码创建用户，传入为用户实体")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "userInfo",value = "用户实体",required = true,dataType = "UserInfo")
+    })
     public String createUserByEntry(@Valid UserInfo userInfo, BindingResult bindingResult){
 
         LOGGER.info("电话" + userInfo.getTel());
@@ -90,6 +97,11 @@ public class UserController {
     DELETE，PUT方法会使用到的，我们可以获取URL后所跟的参数
      */
     @PutMapping("/updateuser/{id}")
+    @ApiOperation(value = "更新用户",notes = "更新用户")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "user_id",value = "用户ID",required = true,dataType = "String"),
+            @ApiImplicitParam(name = "nickName",value = "用户名",required = true,dataType = "String")
+    })
     public int updateUser(@PathVariable("id") String user_id,@RequestParam("nickName") String nickName){
 
         return userService.updateUser(user_id,nickName);
